@@ -2,6 +2,7 @@ class CreateActorProfiles < ActiveRecord::Migration
   def change
     create_table :actor_profiles do |t|
       t.references :actor, index: true, null: false
+      t.boolean :primary, default: false, null: false
       t.integer :gender, default: 0, null: false
       t.date :birth_date
       t.float :height, index: true

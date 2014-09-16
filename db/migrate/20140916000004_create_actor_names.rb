@@ -4,6 +4,7 @@ class CreateActorNames < ActiveRecord::Migration
       t.references :actor, index: true
       t.string :name, null: false
       t.string :name_kana, null: false
+      t.boolean :primary, default: false, null: false
 
       t.timestamps
     end
