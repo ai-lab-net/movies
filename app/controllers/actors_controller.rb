@@ -4,7 +4,7 @@ class ActorsController < ApplicationController
   # GET /actors
   # GET /actors.json
   def index
-    @actors = Actor.all
+    @actors = ActorDecorator.decorate_collection Actor.all
   end
 
   # GET /actors/1
@@ -64,7 +64,7 @@ class ActorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_actor
-      @actor = Actor.find(params[:id])
+      @actor = Actor.find(params[:id]).decorate
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
