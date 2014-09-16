@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<dl>
+  <dt>名前:</dt>
+  <dd><%= @actor.full_name %></dd>
+  <dt>サイズ:</dt>
+  <dd><%= @actor.profile.size %></dd>
+</dl>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>
