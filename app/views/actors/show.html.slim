@@ -1,0 +1,9 @@
+p#notice = notice
+dl
+  dt 名前:
+  dd = @actor.full_name
+  dt サイズ:
+  dd = @actor.profile.try :size
+= link_to 'Edit', edit_actor_path(@actor)
+|  | 
+= link_to 'Back', actors_path
