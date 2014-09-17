@@ -1,0 +1,19 @@
+h1 タイトル詳細
+p#notice = notice
+dl
+  dt タイトル：
+  dd = @content.title
+  dt 出演者：
+  dd = @content.actors.map{|v| v.name.name }.join(",")
+  dt 監督：
+  dd = @content.directors.map(&:name).join(",")
+  dt シリーズ：
+  dd = @content.series.try :name
+  dt メーカー：
+  dd = @content.publisher.try :name
+  dt 販売元：
+  dd = @content.distributor.try :name
+br
+= link_to 'Edit', edit_content_path(@content)
+'  |
+= link_to 'Back', contents_path

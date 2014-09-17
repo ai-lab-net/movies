@@ -1,0 +1,15 @@
+h1 Listing contents
+
+table
+  thead
+    tr
+      th タイトル
+      th colspan=2
+  tbody
+    - @contents.each do |content|
+      tr
+        td = link_to content.title, content
+        td = link_to 'Edit', edit_content_path(content)
+        td = link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'Create', new_content_path

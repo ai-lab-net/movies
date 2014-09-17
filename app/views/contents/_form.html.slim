@@ -1,0 +1,11 @@
+= form_for(@content) do |f|
+  - if @content.errors.any?
+    #error_explanation
+      h2 = pluralize(@content.errors.count, "error")
+
+      ul
+        - @content.errors.full_messages.each do |message|
+          li = message
+
+  .actions
+    = f.submit
